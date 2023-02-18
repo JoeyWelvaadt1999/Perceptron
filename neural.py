@@ -25,14 +25,15 @@ class Perceptron:
         return "Perceptron weight: " + str(self.weights) + "\n" + "Perceptron bias: " + str(self.bias) + "\n"
 
 class Layer: 
-    def __init__(self, perceptrons: list[Perceptron]):
+    def __init__(self, perceptrons: list[Perceptron], name: str):
         self.perceptrons = perceptrons
+        self.name = name
 
     def activation(self, inputs: list):
         return [x.activation(inputs) for x in self.perceptrons]
 
     def __str__(self):
-        layerOutput = "This layer has the following perceptrons: \n"
+        layerOutput = "The layer "+ self.name +" has the following perceptrons: \n"
         for x in self.perceptrons:
             layerOutput += str(x)
         return layerOutput

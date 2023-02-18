@@ -55,7 +55,7 @@ pCarry = Perceptron([0, 1, 1], -1.5)
 layer3 = Layer([pAnd, pNand, pOr])
 layer4 = Layer([pSum, pCarry])
 network2 = Network([layer3, layer4])
-
+print(network2)
 assert network2.predict([1, 1]) == [1, 0]
 assert network2.predict([1, 0]) == [0, 1]
 assert network2.predict([0, 1]) == [0, 1]
